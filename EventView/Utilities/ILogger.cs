@@ -1,4 +1,4 @@
-namespace EventView.Utils
+namespace EventView.Utilities
 {
     public interface ILogger
     {

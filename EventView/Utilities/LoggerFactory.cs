@@ -1,9 +1,9 @@
-using EventView.Utils;
+using EventView.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace EventView.Utils
+namespace EventView.Utilities
 {
     public class LoggerFactory: ILoggerFactory
     {

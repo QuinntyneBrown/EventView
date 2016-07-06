@@ -15,6 +15,7 @@ namespace EventView.Data
         public DbSet<Models.Room> Rooms { get; set; }
         public DbSet<Models.Speaker> Speakers { get; set; }
         public DbSet<Models.Session> Sessions { get; set; }
+        public DbSet<Models.Talk> Talks { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

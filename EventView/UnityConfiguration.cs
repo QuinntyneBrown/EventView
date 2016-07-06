@@ -1,7 +1,7 @@
 using EventView.Configuration;
 using EventView.Data;
 using EventView.Services;
-using EventView.Utils;
+using EventView.Utilities;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.InterceptionExtension;
 
@@ -23,6 +23,7 @@ namespace EventView
             container.RegisterType<IRoomService, RoomService>();
             container.RegisterType<ISpeakerService, ISpeakerService>();
             container.RegisterType<ISessionService, SessionService>();
+            container.RegisterType<ITalkService, TalkService>();
 
             container.RegisterInstance(AuthConfiguration.LazyConfig);            
             return container;

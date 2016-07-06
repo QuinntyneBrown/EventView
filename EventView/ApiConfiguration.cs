@@ -7,7 +7,7 @@ using Microsoft.Owin.Security.OAuth;
 using Swashbuckle.Application;
 using Microsoft.Owin.Cors;
 using System;
-using EventView.Utils;
+using EventView.Utilities;
 using EventView.Configuration;
 using EventView.Services;
 using EventView.Authentication;
@@ -22,8 +22,7 @@ namespace EventView
             WebApiUnityActionFilterProvider.RegisterFilterProviders(config);
 
             app.MapSignalR();
-
-
+            
             config.Filters.Add(new HandleErrorAttribute(UnityConfiguration.GetContainer().Resolve<ILoggerFactory>()));
 
             app.UseCors(CorsOptions.AllowAll);

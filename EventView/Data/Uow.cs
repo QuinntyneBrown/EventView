@@ -28,6 +28,7 @@ namespace EventView.Data
         public IRepository<Models.Room> Rooms { get { return GetStandardRepo<Models.Room>(); } }
         public IRepository<Models.Session> Sessions { get { return GetStandardRepo<Models.Session>(); } }
         public IRepository<Models.Speaker> Speakers { get { return GetStandardRepo<Models.Speaker>(); } }
+        public IRepository<Models.Talk> Talks { get { return GetStandardRepo <Models.Talk>();} }
 
 
         protected void ConfigureDbContext(IDbContext dbContext)

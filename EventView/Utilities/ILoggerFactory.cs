@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace EventView.Utils
+namespace EventView.Utilities
 {
     public interface ILoggerFactory
     {

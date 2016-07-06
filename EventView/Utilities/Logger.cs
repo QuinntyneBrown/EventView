@@ -1,7 +1,7 @@
 
 using System;
 
-namespace EventView.Utils
+namespace EventView.Utilities
 {
     public class Logger: ILogger
     {

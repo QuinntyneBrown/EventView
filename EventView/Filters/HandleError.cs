@@ -1,5 +1,5 @@
 using System.Web.Http.Filters;
-using EventView.Utils;
+using EventView.Utilities;
 
 namespace EventView.Filters
 {
