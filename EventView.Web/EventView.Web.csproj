@@ -214,13 +214,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="config\gulpfile.config.js" />
+    <Content Include="config\karma.conf.js" />
+    <Content Include="config\webpack.config.js" />
+    <Content Include="gulpfile.js" />
     <Content Include="packages.config" />
+    <Content Include="tsconfig.json" />
+    <Content Include="e2e\tsconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="src\app\app.component.html">
+      <DependentUpon>app.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\app.component.scss">
+      <DependentUpon>app.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\app\dashboard\dashboard.component.html">
       <DependentUpon>dashboard.component.ts</DependentUpon>
     </Content>
@@ -261,6 +273,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="e2e\app.e2e.ts" />
+    <TypeScriptCompile Include="e2e\app.po.ts" />
     <TypeScriptCompile Include="src\app\routing\index.ts" />
     <TypeScriptCompile Include="src\app\shared\index.ts" />
     <TypeScriptCompile Include="src\main.ts" />
@@ -288,12 +302,12 @@
     <TypeScriptCompile Include="src\app\talks\talks.action-creator.ts" />
     <TypeScriptCompile Include="src\app\talks\talks.reducers.ts" />
     <TypeScriptCompile Include="src\app\talks\talks.component.ts" />
+    <TypeScriptCompile Include="src\app\app.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="e2e\" />
     <Folder Include="src\assets\sass\" />
   </ItemGroup>
   <PropertyGroup>

@@ -1,6 +1,6 @@
-require("../core");
+require("angular-rx-ui/src/components/core");
 
-import { provide, provideAction } from "../core";
+import { provide, provideAction } from "angular-rx-ui/src/components/core";
 import { SpeakersComponent } from "./speakers.component";
 import { SpeakersActionCreator } from "./speakers.action-creator";
 import *  as reducers from "./speakers.reducers";

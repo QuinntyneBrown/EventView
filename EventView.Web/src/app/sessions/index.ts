@@ -1,6 +1,6 @@
-require("../core");
+require("angular-rx-ui/src/components/core");
 
-import { provide, provideAction } from "../core";
+import { provide, provideAction } from "angular-rx-ui/src/components/core";
 import { SessionsComponent } from "./sessions.component";
 import { SessionsActionCreator } from "./sessions.action-creator";
 import *  as reducers from "./sessions.reducers";

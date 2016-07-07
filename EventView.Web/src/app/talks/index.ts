@@ -1,6 +1,6 @@
-require("../core");
+require("angular-rx-ui/src/components/core");
 
-import { provide, provideAction } from "../core";
+import { provide, provideAction } from "angular-rx-ui/src/components/core";
 import { TalksComponent } from "./talks.component";
 import { TalksActionCreator } from "./talks.action-creator";
 import *  as reducers from "./talks.reducers";

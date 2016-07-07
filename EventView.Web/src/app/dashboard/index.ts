@@ -1,6 +1,6 @@
-require("../core");
+require("angular-rx-ui/src/components/core");
 
-import { provide, provideAction } from "../core";
+import { provide, provideAction } from "angular-rx-ui/src/components/core";
 import { DashboardComponent } from "./dashboard.component";
 import { DashboardActionCreator } from "./dashboard.action-creator";
 import *  as reducers from "./dashboard.reducers";
