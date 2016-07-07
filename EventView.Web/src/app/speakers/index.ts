@@ -6,9 +6,7 @@ import { SpeakersActionCreator } from "./speakers.action-creator";
 import *  as reducers from "./speakers.reducers";
 import *  as actions from "./speakers.actions";
 
-var app = (<any>angular.module("app.speakers", [
-    "app.core"    
-]));
+var app = (<any>angular.module("eventViewApp.speakers", []));
 
 provide(app,SpeakersActionCreator);
 

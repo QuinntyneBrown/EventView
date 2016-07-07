@@ -6,9 +6,7 @@ import { TalksActionCreator } from "./talks.action-creator";
 import *  as reducers from "./talks.reducers";
 import *  as actions from "./talks.actions";
 
-var app = (<any>angular.module("app.talks", [
-    "app.core"    
-]));
+var app = (<any>angular.module("eventViewApp.talks", []));
 
 provide(app,TalksActionCreator);
 

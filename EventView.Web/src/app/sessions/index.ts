@@ -6,9 +6,7 @@ import { SessionsActionCreator } from "./sessions.action-creator";
 import *  as reducers from "./sessions.reducers";
 import *  as actions from "./sessions.actions";
 
-var app = (<any>angular.module("app.sessions", [
-    "app.core"    
-]));
+var app = (<any>angular.module("eventViewApp.sessions", []));
 
 provide(app,SessionsActionCreator);
 

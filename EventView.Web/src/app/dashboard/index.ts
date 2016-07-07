@@ -6,8 +6,7 @@ import { DashboardActionCreator } from "./dashboard.action-creator";
 import *  as reducers from "./dashboard.reducers";
 import *  as actions from "./dashboard.actions";
 
-var app = (<any>angular.module("app.dashboard", [
-    "app.core"    
+var app = (<any>angular.module("eventViewApp.dashboard", [
 ]));
 
 provide(app,DashboardActionCreator);
