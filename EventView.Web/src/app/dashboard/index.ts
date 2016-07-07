@@ -1,0 +1,21 @@
+require("../core");
+
+import { provide, provideAction } from "../core";
+import { DashboardComponent } from "./dashboard.component";
+import { DashboardActionCreator } from "./dashboard.action-creator";
+import *  as reducers from "./dashboard.reducers";
+import *  as actions from "./dashboard.actions";
+
+var app = (<any>angular.module("app.dashboard", [
+    "app.core"    
+]));
+
+provide(app,DashboardActionCreator);
+
+app.component(DashboardComponent);
+
+app.config(["reducersProvider", reducersProvider => {	
+    for (var reducer in reducers) { reducersProvider.configure(reducers[reducer]); }
+}]);
+
+for (var action in actions) { provideAction(app, actions[action]); }

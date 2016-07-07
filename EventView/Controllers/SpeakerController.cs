@@ -41,8 +41,6 @@ namespace EventView.Controllers
         [ResponseType(typeof(int))]
         public IHttpActionResult Remove(int id) { return Ok(_speakerService.Remove(id)); }
 
-        protected readonly ISpeakerService _speakerService;
-
-
+        protected readonly ISpeakerService _speakerService;        
     }
 }

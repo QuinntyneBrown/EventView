@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -24,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -128,6 +130,26 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Serilog, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.1.5.14\lib\net45\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.FullNetFx, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.1.5.14\lib\net45\Serilog.FullNetFx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.MSSqlServer, Version=3.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.MSSqlServer.3.0.98\lib\net45\Serilog.Sinks.MSSqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SerilogMetrics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d4b150f150627b06, processorArchitecture=MSIL">
+      <HintPath>..\packages\SerilogMetrics.AddProperties.Fork.1.0.36\lib\net45\SerilogMetrics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SerilogWeb.Classic, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9462ddd55fbc0e7f, processorArchitecture=MSIL">
+      <HintPath>..\packages\SerilogWeb.Classic.2.0.9\lib\net45\SerilogWeb.Classic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Swashbuckle.Core.5.3.2\lib\net40\Swashbuckle.Core.dll</HintPath>
       <Private>True</Private>
@@ -199,10 +221,33 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="src\app\dashboard\dashboard.component.html">
+      <DependentUpon>dashboard.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\dashboard\dashboard.component.scss">
+      <DependentUpon>dashboard.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\sessions\sessions.component.html">
+      <DependentUpon>sessions.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\sessions\sessions.component.scss">
+      <DependentUpon>sessions.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\speakers\speakers.component.html">
+      <DependentUpon>speakers.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\speakers\speakers.component.scss">
+      <DependentUpon>speakers.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\talks\talks.component.html">
+      <DependentUpon>talks.component.ts</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
-    <Content Include="install-packages.txt" />
+    <Content Include="src\app\talks\talks.component.scss">
+      <DependentUpon>talks.component.ts</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -215,11 +260,48 @@
       <Name>EventView</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\routing\index.ts" />
+    <TypeScriptCompile Include="src\app\shared\index.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\dashboard.model.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\index.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\dashboard.actions.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\dashboard.action-creator.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\dashboard.reducers.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\dashboard.component.ts" />
+    <TypeScriptCompile Include="src\app\sessions\sessions.model.ts" />
+    <TypeScriptCompile Include="src\app\sessions\index.ts" />
+    <TypeScriptCompile Include="src\app\sessions\sessions.actions.ts" />
+    <TypeScriptCompile Include="src\app\sessions\sessions.action-creator.ts" />
+    <TypeScriptCompile Include="src\app\sessions\sessions.reducers.ts" />
+    <TypeScriptCompile Include="src\app\sessions\sessions.component.ts" />
+    <TypeScriptCompile Include="src\app\speakers\speakers.model.ts" />
+    <TypeScriptCompile Include="src\app\speakers\index.ts" />
+    <TypeScriptCompile Include="src\app\speakers\speakers.actions.ts" />
+    <TypeScriptCompile Include="src\app\speakers\speakers.action-creator.ts" />
+    <TypeScriptCompile Include="src\app\speakers\speakers.reducers.ts" />
+    <TypeScriptCompile Include="src\app\speakers\speakers.component.ts" />
+    <TypeScriptCompile Include="src\app\talks\talks.model.ts" />
+    <TypeScriptCompile Include="src\app\talks\index.ts" />
+    <TypeScriptCompile Include="src\app\talks\talks.actions.ts" />
+    <TypeScriptCompile Include="src\app\talks\talks.action-creator.ts" />
+    <TypeScriptCompile Include="src\app\talks\talks.reducers.ts" />
+    <TypeScriptCompile Include="src\app\talks\talks.component.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="e2e\" />
+    <Folder Include="src\assets\sass\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
