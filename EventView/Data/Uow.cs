@@ -29,8 +29,8 @@ namespace EventView.Data
         public IRepository<Models.Session> Sessions { get { return GetStandardRepo<Models.Session>(); } }
         public IRepository<Models.Speaker> Speakers { get { return GetStandardRepo<Models.Speaker>(); } }
         public IRepository<Models.Talk> Talks { get { return GetStandardRepo <Models.Talk>();} }
-
-
+        public IRepository<Models.Image> Images { get { return GetStandardRepo<Models.Image>(); } }
+        
         protected void ConfigureDbContext(IDbContext dbContext)
         {
             dbContext.Configuration.ProxyCreationEnabled = false;

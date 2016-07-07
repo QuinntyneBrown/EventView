@@ -6,6 +6,7 @@ namespace EventView.Data
         IRepository<Models.Speaker> Speakers { get; }
         IRepository<Models.Session> Sessions { get; }
         IRepository<Models.Talk> Talks { get; }
+        IRepository<Models.Image> Images { get; }
 
         void SaveChanges();
     }

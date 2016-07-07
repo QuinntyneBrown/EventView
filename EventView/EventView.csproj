@@ -119,6 +119,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
@@ -174,10 +175,15 @@
   <ItemGroup>
     <Compile Include="ApiConfiguration.cs" />
     <Compile Include="Controllers\RoomController.cs" />
+    <Compile Include="Dtos\ImageUploadResponseDto.cs" />
+    <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Level.cs" />
     <Compile Include="Models\RoomType.cs" />
     <Compile Include="Models\Talk.cs" />
     <Compile Include="Models\TimeSlot.cs" />
+    <Compile Include="UploadHandlers\FileMultipartFormDataStreamProvider.cs" />
+    <Compile Include="UploadHandlers\InMemoryMultipartFormDataStreamProvider.cs" />
+    <Compile Include="UploadHandlers\StreamHelper.cs" />
     <Compile Include="WebApiUnityActionFilterProvider.cs" />
     <Compile Include="Authentication\JwtOptions.cs" />
     <Compile Include="Authentication\JwtWriterFormat.cs" />
@@ -246,6 +252,12 @@
     <Compile Include="Services\TalkService.cs" />
     <Compile Include="Services\ITalkService.cs" />
     <Compile Include="Controllers\TalkController.cs" />
+    <Compile Include="Dtos\ImageDto.cs" />
+    <Compile Include="Dtos\ImageAddOrUpdateRequestDto.cs" />
+    <Compile Include="Dtos\ImageAddOrUpdateResponseDto.cs" />
+    <Compile Include="Services\ImageService.cs" />
+    <Compile Include="Services\IImageService.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

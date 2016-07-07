@@ -24,7 +24,8 @@ namespace EventView
             container.RegisterType<ISpeakerService, ISpeakerService>();
             container.RegisterType<ISessionService, SessionService>();
             container.RegisterType<ITalkService, TalkService>();
-
+            container.RegisterType<IImageService, ImageService>();
+            
             container.RegisterInstance(AuthConfiguration.LazyConfig);            
             return container;
         }

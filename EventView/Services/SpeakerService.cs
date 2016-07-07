@@ -39,18 +39,18 @@ namespace EventView.Services
         public ICollection<SpeakerDto> Get()
         {
             ICollection<SpeakerDto> response = new HashSet<SpeakerDto>();
-            var entities = _repository.GetAll().Where(x => x.IsDeleted == false).ToList();
+            var entities = GetAll().Where(x => x.IsDeleted == false).ToList();
             foreach(var entity in entities) { response.Add(new SpeakerDto(entity)); }    
             return response;
         }
-
-
+        
         public SpeakerDto GetById(int id)
         {
-            return new SpeakerDto(_repository.GetAll().Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault());
+            return new SpeakerDto(GetAll().Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault());
         }
 
         private IQueryable<Speaker> GetAll() => _repository.GetAll()
+            .Include(x=>x.Image)
             .Include(x => x.Sessions);
 
         protected readonly IUow uow;
