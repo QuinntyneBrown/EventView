@@ -5,6 +5,7 @@ using EventView.Dtos;
 using System.Data.Entity;
 using System.Linq;
 using EventView.Models;
+using System.Data.Entity;
 
 namespace EventView.Services
 {
@@ -13,15 +14,15 @@ namespace EventView.Services
         public SpeakerService(IUow uow, ICacheProvider cacheProvider)
         {
             this.uow = uow;
-            this.repository = uow.Speakers;
+            this._repository = uow.Speakers;
             this.cache = cacheProvider.GetCache();
         }
 
         public SpeakerAddOrUpdateResponseDto AddOrUpdate(SpeakerAddOrUpdateRequestDto request)
         {
-            var entity = repository.GetAll()
+            var entity = _repository.GetAll()
                 .FirstOrDefault(x => x.Id == request.Id && x.IsDeleted == false);
-            if (entity == null) repository.Add(entity = new Speaker());
+            if (entity == null) _repository.Add(entity = new Speaker());
             entity.Name = request.Name;
             uow.SaveChanges();
             return new SpeakerAddOrUpdateResponseDto(entity);
@@ -29,7 +30,7 @@ namespace EventView.Services
 
         public dynamic Remove(int id)
         {
-            var entity = repository.GetById(id);
+            var entity = _repository.GetById(id);
             entity.IsDeleted = true;
             uow.SaveChanges();
             return id;
@@ -38,7 +39,7 @@ namespace EventView.Services
         public ICollection<SpeakerDto> Get()
         {
             ICollection<SpeakerDto> response = new HashSet<SpeakerDto>();
-            var entities = repository.GetAll().Where(x => x.IsDeleted == false).ToList();
+            var entities = _repository.GetAll().Where(x => x.IsDeleted == false).ToList();
             foreach(var entity in entities) { response.Add(new SpeakerDto(entity)); }    
             return response;
         }
@@ -46,11 +47,14 @@ namespace EventView.Services
 
         public SpeakerDto GetById(int id)
         {
-            return new SpeakerDto(repository.GetAll().Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault());
+            return new SpeakerDto(_repository.GetAll().Where(x => x.Id == id && x.IsDeleted == false).FirstOrDefault());
         }
 
+        private IQueryable<Speaker> GetAll() => _repository.GetAll()
+            .Include(x => x.Sessions);
+
         protected readonly IUow uow;
-        protected readonly IRepository<Speaker> repository;
+        protected readonly IRepository<Speaker> _repository;
         protected readonly ICache cache;
     }
 }

@@ -5,6 +5,7 @@ using EventView.Dtos;
 using System.Data.Entity;
 using System.Linq;
 using EventView.Models;
+using System.Data.Entity;
 
 namespace EventView.Services
 {

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using EventView.Dtos;
 using EventView.Data;
 using System.Linq;
+using EventView.Models;
+using System.Data.Entity;
 
 namespace EventView.Services
 {
@@ -45,6 +47,9 @@ namespace EventView.Services
             _uow.SaveChanges();
             return id;
         }
+
+        private IQueryable<Room> GetAll() => _repository.GetAll()
+            .Include(x => x.Sessions);
 
         protected readonly IUow _uow;
         protected readonly IRepository<Models.Room> _repository;
