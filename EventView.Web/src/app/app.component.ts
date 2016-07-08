@@ -3,9 +3,7 @@ import { CanActivate, ChangeDetectionStrategy, Component } from "angular-rx-ui/s
 @Component({
     template: require("./app.component.html"),
     styles: [require("./app.component.scss")],
-    selector: "app",
+    selector: "event-view-app",
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
-    constructor() { }
-}
+export class AppComponent { }

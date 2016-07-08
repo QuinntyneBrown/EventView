@@ -17,3 +17,6 @@ app.config(["reducersProvider", reducersProvider => {
 }]);
 
 for (var action in actions) { provideAction(app, actions[action]); }
+
+
+export * from "./sessions.component";
