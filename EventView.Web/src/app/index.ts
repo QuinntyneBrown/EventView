@@ -1,8 +1,8 @@
-﻿require("./app/dashboard");
-require("./app/sessions");
-require("./app/shared");
-require("./app/speakers");
-require("./app/talks");
+﻿require("./dashboard");
+require("./sessions");
+require("./shared");
+require("./speakers");
+require("./talks");
 
 export * from "./app.component";
 export * from "./dashboard";

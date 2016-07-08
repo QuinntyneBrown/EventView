@@ -243,6 +243,11 @@
     <Content Include="tsconfig.json" />
     <Content Include="e2e\tsconfig.json" />
     <Content Include="bower.json" />
+    <Content Include="typings\globals\angular-mocks\typings.json" />
+    <Content Include="typings\globals\angular-route\typings.json" />
+    <Content Include="typings\globals\angular\typings.json" />
+    <Content Include="typings\globals\jasmine\typings.json" />
+    <Content Include="typings\globals\require\typings.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -299,12 +304,6 @@
     <TypeScriptCompile Include="e2e\app.po.ts" />
     <TypeScriptCompile Include="src\app\index.ts" />
     <TypeScriptCompile Include="src\app\routing\index.ts" />
-    <TypeScriptCompile Include="src\app\shared\app-footer\app-footer.component.spec.ts">
-      <DependentUpon>app-footer.component.ts</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="src\app\shared\app-header\app-header.component.spec.ts">
-      <DependentUpon>app-header.component.ts</DependentUpon>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\shared\index.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard.model.ts" />
@@ -336,6 +335,13 @@
     <TypeScriptCompile Include="src\app\shared\app-header\app-header.component.ts" />
     <TypeScriptCompile Include="src\app\shared\app-footer\index.ts" />
     <TypeScriptCompile Include="src\app\shared\app-footer\app-footer.component.ts" />
+    <TypeScriptCompile Include="typings\globals\angular-mocks\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\angular-route\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\angular\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\require\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\rx\rx.all.d.ts" />
+    <TypeScriptCompile Include="typings\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

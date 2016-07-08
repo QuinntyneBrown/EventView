@@ -6,8 +6,5 @@
     "sourceMap": true,
     "module": "commonjs",
     "moduleResolution": "node"
-  },
-  "exclude": [
-    "node_modules"
-  ]
+  }
 }

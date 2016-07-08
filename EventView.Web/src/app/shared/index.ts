@@ -1,4 +1,4 @@
-﻿require("../core");
+﻿require("angular-rx-ui/src/components/core");
 
 import { provide, provideAction } from "angular-rx-ui/src/components/core";
 import { AppHeaderComponent } from "./app-header";
