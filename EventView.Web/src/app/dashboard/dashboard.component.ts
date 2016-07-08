@@ -6,6 +6,4 @@ import { CanActivate, ChangeDetectionStrategy, Component } from "angular-rx-ui/s
     selector: "dashboard",
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DashboardComponent {
-    constructor() { }
-}
+export class DashboardComponent { }

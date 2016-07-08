@@ -6,6 +6,4 @@ import { CanActivate, ChangeDetectionStrategy, Component } from "angular-rx-ui/s
     selector: "talks",
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TalksComponent {
-    constructor() { }
-}
+export class TalksComponent { }

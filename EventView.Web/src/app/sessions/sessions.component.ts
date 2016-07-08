@@ -6,6 +6,4 @@ import { CanActivate, ChangeDetectionStrategy, Component } from "angular-rx-ui/s
     selector: "sessions",
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SessionsComponent {
-    constructor() { }
-}
+export class SessionsComponent { }

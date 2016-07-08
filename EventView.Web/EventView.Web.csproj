@@ -217,6 +217,7 @@
     <Content Include="config\gulpfile.config.js" />
     <Content Include="config\karma.conf.js" />
     <Content Include="config\webpack.config.js" />
+    <Content Include="dist\app.js" />
     <Content Include="gulpfile.js" />
     <Content Include="lib\angular-route.js" />
     <Content Include="lib\angular-rx-ui.js" />
