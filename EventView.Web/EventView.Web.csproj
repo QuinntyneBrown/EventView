@@ -7,7 +7,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{658DA84D-AD6C-414A-9333-B89232911187}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -22,7 +23,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -226,6 +228,18 @@
     <Content Include="lib\moment.js" />
     <Content Include="lib\rx.all.compat.js" />
     <Content Include="packages.config" />
+    <Content Include="src\app\shared\app-footer\app-footer.component.html">
+      <DependentUpon>app-footer.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\shared\app-footer\app-footer.component.scss">
+      <DependentUpon>app-footer.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\shared\app-header\app-header.component.html">
+      <DependentUpon>app-header.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\shared\app-header\app-header.component.scss">
+      <DependentUpon>app-header.component.ts</DependentUpon>
+    </Content>
     <Content Include="tsconfig.json" />
     <Content Include="e2e\tsconfig.json" />
     <Content Include="bower.json" />
@@ -262,14 +276,6 @@
     <Content Include="src\app\talks\talks.component.html">
       <DependentUpon>talks.component.ts</DependentUpon>
     </Content>
-    <Content Include="src\app\shared\app-header\app-headers-container.component.css" />
-    <Content Include="src\app\shared\app-header\app-headers-container.component.html" />
-    <Content Include="src\app\shared\app-header\app-header.component.scss" />
-    <Content Include="src\app\shared\app-header\app-header.component.html" />
-    <Content Include="src\app\shared\app-footer\app-footers-container.component.css" />
-    <Content Include="src\app\shared\app-footer\app-footers-container.component.html" />
-    <Content Include="src\app\shared\app-footer\app-footer.component.scss" />
-    <Content Include="src\app\shared\app-footer\app-footer.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
@@ -291,7 +297,14 @@
   <ItemGroup>
     <TypeScriptCompile Include="e2e\app.e2e.ts" />
     <TypeScriptCompile Include="e2e\app.po.ts" />
+    <TypeScriptCompile Include="src\app\index.ts" />
     <TypeScriptCompile Include="src\app\routing\index.ts" />
+    <TypeScriptCompile Include="src\app\shared\app-footer\app-footer.component.spec.ts">
+      <DependentUpon>app-footer.component.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\shared\app-header\app-header.component.spec.ts">
+      <DependentUpon>app-header.component.ts</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\shared\index.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard.model.ts" />
@@ -319,22 +332,10 @@
     <TypeScriptCompile Include="src\app\talks\talks.reducers.ts" />
     <TypeScriptCompile Include="src\app\talks\talks.component.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
-    <TypeScriptCompile Include="src\app\shared\app-header\app-header.model.ts" />
     <TypeScriptCompile Include="src\app\shared\app-header\index.ts" />
-    <TypeScriptCompile Include="src\app\shared\app-header\app-headers-container.component.ts" />
-    <TypeScriptCompile Include="src\app\shared\app-header\app-header.actions.ts" />
-    <TypeScriptCompile Include="src\app\shared\app-header\app-header.action-creator.ts" />
-    <TypeScriptCompile Include="src\app\shared\app-header\app-header.reducers.ts" />
     <TypeScriptCompile Include="src\app\shared\app-header\app-header.component.ts" />
-    <TypeScriptCompile Include="src\app\shared\app-header\app-header.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\shared\app-footer\app-footer.model.ts" />
     <TypeScriptCompile Include="src\app\shared\app-footer\index.ts" />
-    <TypeScriptCompile Include="src\app\shared\app-footer\app-footers-container.component.ts" />
-    <TypeScriptCompile Include="src\app\shared\app-footer\app-footer.actions.ts" />
-    <TypeScriptCompile Include="src\app\shared\app-footer\app-footer.action-creator.ts" />
-    <TypeScriptCompile Include="src\app\shared\app-footer\app-footer.reducers.ts" />
     <TypeScriptCompile Include="src\app\shared\app-footer\app-footer.component.ts" />
-    <TypeScriptCompile Include="src\app\shared\app-footer\app-footer.component.spec.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -361,7 +362,8 @@
           <IISUrl>http://localhost:56622/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl></CustomServerUrl>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
