@@ -229,6 +229,12 @@
     <Content Include="lib\moment.js" />
     <Content Include="lib\rx.all.compat.js" />
     <Content Include="packages.config" />
+    <Content Include="src\app\sessions\session-card.component.html">
+      <DependentUpon>session-card.component.ts</DependentUpon>
+    </Content>
+    <Content Include="src\app\sessions\session-card.component.scss">
+      <DependentUpon>session-card.component.ts</DependentUpon>
+    </Content>
     <Content Include="src\app\shared\app-footer\app-footer.component.html">
       <DependentUpon>app-footer.component.ts</DependentUpon>
     </Content>
@@ -303,9 +309,13 @@
   <ItemGroup>
     <TypeScriptCompile Include="e2e\app.e2e.ts" />
     <TypeScriptCompile Include="e2e\app.po.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\dashboard.routes.ts" />
     <TypeScriptCompile Include="src\app\index.ts" />
     <TypeScriptCompile Include="src\app\routing\index.ts" />
+    <TypeScriptCompile Include="src\app\sessions\sessions.routes.ts" />
     <TypeScriptCompile Include="src\app\shared\index.ts" />
+    <TypeScriptCompile Include="src\app\speakers\speakers.routes.ts" />
+    <TypeScriptCompile Include="src\app\talks\talks.routes.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard.model.ts" />
     <TypeScriptCompile Include="src\app\dashboard\index.ts" />
@@ -343,6 +353,7 @@
     <TypeScriptCompile Include="typings\globals\require\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\rx\rx.all.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
+    <TypeScriptCompile Include="src\app\sessions\session-card.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
